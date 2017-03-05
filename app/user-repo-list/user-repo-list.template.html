@@ -1,22 +1,33 @@
 <div class="maincontent">
     <div class="login-box-body">
         <img ng-src="{{$ctrl.user.avatar_url}}" alt="" class="userAvatar pull-left">
-        <button class="btn-lg btn-blue pull-right"><a target="_blank" ng-href="https://useractivity.herokuapp.com/" >Go to user activity</a></button>
-        <input type="button" class="btn-lg btn-blue pull-right" value="Sign out" ng-click="$ctrl.signOut()">
+        <button class="btn-lg btn-blue pull-right"><a target="_blank" ng-href="https://useractivity.herokuapp.com/"
+                                                      ng-click="$ctrl.EventHandlers('User click on the link Go to user activity')">Go
+            to user activity</a></button>
+        <span ng-click="$ctrl.EventHandlers('User click on the button Sign out')"><input type="button"
+                                                                                         class="btn-lg btn-blue pull-right"
+                                                                                         value="Sign out"
+                                                                                         ng-click="$ctrl.signOut()"></span>
         <h2>Repositories</h2>
         <div class="table-responsive">
             <table class="users table-responsive" cellspacing="5">
                 <tr ng-repeat="repo in $ctrl.repos">
                     <td ng-init="$ctrl.getRepoIssues(repo)">
-                        <!--<td>-->
-                        <p tooltip-placement="right" uib-tooltip-html="'name:{{repo.name}}<br>Language:{{repo.language}}'">{{repo.name}}</p>
+                        <p tooltip-placement="right"
+                           uib-tooltip-html="'name:{{repo.name}}<br>Language:{{repo.language}}'">
+                            <span ng-mouseover="$ctrl.EventHandlers('Mouse Over:' + repo.name)">{{repo.name}}</span>
+                        </p>
                         <ul ng-repeat="issue in repo.issues" ng-show="Showissue">
                             <li>
-                                <a target="_blank" ng-click="$ctrl.clickOnIssue(issue.title)" ng-href="{{issue.html_url}}">{{issue.title}}</a>
+                                <a target="_blank"
+                                   ng-click="$ctrl.EventHandlers('User click on the link ' + issue.title)"
+                                   ng-href="{{issue.html_url}}">{{issue.title}}</a>
                             </li>
                         </ul>
                     </td>
-                    <td><input type="button" value="Show issues" ng-click="Showissue = !Showissue" class="btn btn-info">
+                    <td><span ng-click="$ctrl.EventHandlers('User click on the button Show issues №' + $index)"><input
+                            type="button" value="Show issues" ng-click="Showissue = !Showissue"
+                            class="btn btn-info"></span>
                     </td>
                 </tr>
             </table>

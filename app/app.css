@@ -7,10 +7,11 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
-    width:100%;
-    color:black;
+    width: 100%;
+    color: black;
 }
-.maincontent{
+
+.maincontent {
     width: 100%;
     height: 100vh;
     position: relative;
@@ -20,8 +21,8 @@ html, body {
     background-color: rgba(57, 202, 244, 1) !important;
 }
 
-.login-box-body{
-    background: rgba(255,255,255,1);
+.login-box-body {
+    background: rgba(255, 255, 255, 1);
     padding: 20px;
     border-top: 0;
     color: #666;
@@ -35,45 +36,52 @@ html, body {
     height: 100vh;
 
 }
-#logo{
-    margin-bottom:5%;
+
+#logo {
+    margin-bottom: 5%;
 }
-#logo>img{
+
+#logo > img {
     width: 40%;
 }
 
-.btn-blue{
+.btn-blue {
     background-color: #42c0fb !important;
     color: #FFFFFF;
 }
-.btn-blue a, .btn-blue a:hover, .btn-blue a:focus{
-    color:white;
+
+.btn-blue a, .btn-blue a:hover, .btn-blue a:focus {
+    color: white;
     text-decoration: none;
 }
-.table-responsive{
+
+.table-responsive {
     margin-top: 5%;
     width: 100%;
     position: relative;
     right: 0;
     left: 0;
 }
-.userAvatar{
+
+.userAvatar {
     width: 20%;
     border-radius: 50%;
 }
 
-ul{
+ul {
     list-style-type: none;
 }
+
 .tooltip-inner {
-    white-space:pre-wrap;
+    white-space: pre-wrap;
 }
-.login-box-body h2{
+
+.login-box-body h2 {
     clear: both;
 }
 
-@media (max-width: 768px){
-    .login-box-body{
+@media (max-width: 768px) {
+    .login-box-body {
         width: 80vw;
     }
 }
