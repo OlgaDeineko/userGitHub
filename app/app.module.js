@@ -1,5 +1,6 @@
 'use strict';
 
+// Define the `UserGitHubApp` module
 angular.module('UserGitHubApp', [
   'userSignIn',
   'userRepoList',

@@ -1,5 +1,6 @@
 'use strict';
 
+// Define the route provider
 angular.module('UserGitHubApp').config(['$locationProvider', '$routeProvider',
   function config($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');

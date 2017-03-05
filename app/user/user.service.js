@@ -3,7 +3,8 @@
 angular.module('userServise', [])
   .service('User', ['$http', function ($http) {
     var self = this;
-    self.getUser = function (email, password) {
+
+    self.userAuthorization = function (email, password) {
       self.authorization = window.btoa(email + ':' + password);
       return $http.get('https://api.github.com/user', {
         method: 'GET',
@@ -21,7 +22,7 @@ angular.module('userServise', [])
       return $http.get('https://api.github.com/repos/' + repo.owner.login + '/' + repo.name + '/issues')
     }
 
-    self.getUserInfo = function (login) {
+    self.getUserData = function (login) {
       return $http.get('https://api.github.com/users/' + login)
     }
   }]);

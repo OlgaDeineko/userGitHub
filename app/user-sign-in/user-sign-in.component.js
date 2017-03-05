@@ -6,11 +6,10 @@ angular.module('userSignIn', []).component('userSignIn', {
     var self = this;
 
     self.singInUser = function (login, password) {
-      user.getUser(login, password).then(function (response) {
+      user.userAuthorization(login, password).then(function (response) {
         self.user = response.data;
-        self.clickEvent();
-        return $location.url('user/' + self.user.login);
-        // return self.user
+        self.clickEvent(); // Call event handler
+        return $location.url('user/' + self.user.login); //Go to user repositories
       }).catch(function (error) {
         alert("Incorrect username or password.");
         self.userLogin = "";
@@ -18,7 +17,7 @@ angular.module('userSignIn', []).component('userSignIn', {
       });
     }
 
-    // Event handlers
+    // Event handler when user sign in
     self.clickEvent = function () {
       activity.getUserActivity().then(function (response) {
         self.userActivityData = response.data;

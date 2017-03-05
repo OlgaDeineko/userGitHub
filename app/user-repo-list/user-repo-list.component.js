@@ -4,15 +4,18 @@ angular.module('userRepoList', []).component('userRepoList', {
   templateUrl: './app/user-repo-list/user-repo-list.template.html',
   controller: ['User', '$routeParams', '$location', 'Activity', function UserRepoListController(user, $routeParams, $location, activity) {
     var self = this;
+
+//Get repositories data
     user.getRepos($routeParams.login).then(function (response) {
       self.repos = response.data;
     });
 
-    user.getUserInfo($routeParams.login).then(function (response) {
+//Get user data
+    user.getUserData($routeParams.login).then(function (response) {
       self.user = response.data;
     });
 
-
+//Get issues data
     self.getRepoIssues = function (repo) {
       user.getIssues(repo).then(function (res) {
         self.issues = res.data;
@@ -22,10 +25,10 @@ angular.module('userRepoList', []).component('userRepoList', {
         else {
           repo.issues = self.issues;
         }
-
       });
     };
 
+//Sign out user
     self.signOut = function () {
       return $location.url('user/');
     }
