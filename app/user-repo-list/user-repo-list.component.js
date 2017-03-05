@@ -12,6 +12,10 @@ angular.module('userRepoList', []).component('userRepoList', {
       self.user = response.data;
     });
 
+    activity.getUserActivity().then(function (response) {
+      self.userActivityData = response.data;
+    });
+
     self.getRepoIssues = function (repo) {
         user.getIssues(repo).then(function (res) {
         self.issues = res.data;
@@ -29,9 +33,11 @@ angular.module('userRepoList', []).component('userRepoList', {
       return $location.url('user/');
     }
 
+// Event handlers
     self.clickOnIssue = function (issue) {
-      self.id = "13";
-      self.date = "2017-04-04T00:00:00.000Z";
+      console.log(self.userActivityData);
+      self.id = self.userActivityData.length + 1;
+      self.date = new Date().toUTCString();
       self.activity = 'User click on '+issue;
       activity.saveUserActivity(self.id,self.date,self.activity);
     }
