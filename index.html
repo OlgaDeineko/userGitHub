@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="UserGitHubApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="UserGitHubApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="UserGitHubApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="UserGitHubApp" class="no-js"> <!--<![endif]-->
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="./app/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="./app/bower_components/angular-bootstrap/ui-bootstrap-csp.css" />
+    <link href="./app/app.css" rel="stylesheet" />
+    <script src="./app/bower_components/angular/angular.js"></script>
+    <script src="./app/bower_components/angular-route/angular-route.js"></script>
+    <script src="./app/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="./app/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./app/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./app/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="./app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="./app/ngsanitize/angular-sanitize/angular-sanitize.js"></script>
+
+
+    <script src="./app/app.module.js"></script>
+    <script src="./app/user-sign-in/user-sign-in.component.js"></script>
+    <script src="./app/user-repo-list/user-repo-list.component.js"></script>
+    <script src="./app/user/user.service.js"></script>
+    <script src="./app/app.config.js"></script>
+
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div ng-view></div>
+
+</body>
+</html>

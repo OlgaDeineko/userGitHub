@@ -1,0 +1,16 @@
+{
+  "name": "application",
+  "description": "project for AngularJS",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-animate": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-resource": "1.5.x",
+    "angular-route": "1.5.x",
+    "bootstrap": "3.3.x",
+    "jquery": "latest",
+    "angular-bootstrap": "^2.5.0"
+  }
+}

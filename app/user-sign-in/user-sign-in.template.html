@@ -1,0 +1,21 @@
+<div class="maincontent">
+    <div class="login-box-body">
+        <form>
+            <div id="logo">
+                <img src="./app/content/images/logo.png">
+                <h1>Sign in to GitHub</h1>
+            </div>
+            <div class="form-group-lg has-feedback">
+                <input type="email" ng-model="$ctrl.userLogin" placeholder="Enter email..." class="form-control">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+            </div>
+            <br>
+            <div class="form-group-lg has-feedback">
+                <input type="password" ng-model="$ctrl.userPassword" placeholder="Enter password" class="form-control">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <br>
+            <button analytics-on="click" analytics-event="Authorization" ng-click="$ctrl.singInUser($ctrl.userLogin,$ctrl.userPassword)" class="btn-lg btn-blue">Sign in</a></button>
+        </form>
+    </div>
+</div>
