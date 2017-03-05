@@ -2,7 +2,7 @@
 
 angular.module('userRepoList', []).component('userRepoList', {
   templateUrl: './app/user-repo-list/user-repo-list.template.html',
-  controller: ['User','$routeParams','$location', function UserRepoListController(user, $routeParams,$location) {
+  controller: ['User','$routeParams','$location','Activity', function UserRepoListController(user, $routeParams,$location, activity) {
     var self = this;
     user.getRepos($routeParams.login).then(function (response) {
       self.repos = response.data;
@@ -17,11 +17,9 @@ angular.module('userRepoList', []).component('userRepoList', {
         self.issues = res.data;
           if(self.issues.length == 0){
             repo.issues =[{title:'No issues!'}];
-            console.log(repo.issues);
           }
           else{
             repo.issues = self.issues;
-            console.log(repo.issues);
           }
 
         });
@@ -29,6 +27,13 @@ angular.module('userRepoList', []).component('userRepoList', {
 
     self.signOut = function () {
       return $location.url('user/');
+    }
+
+    self.clickOnIssue = function (issue) {
+      self.id = "13";
+      self.date = "2017-04-04T00:00:00.000Z";
+      self.activity = 'User click on '+issue;
+      activity.saveUserActivity(self.id,self.date,self.activity);
     }
 
 

@@ -12,7 +12,7 @@
                         <p tooltip-placement="right" uib-tooltip-html="'name:{{repo.name}}<br>Language:{{repo.language}}'">{{repo.name}}</p>
                         <ul ng-repeat="issue in repo.issues" ng-show="Showissue">
                             <li>
-                                <a target="_blank" ng-href="{{issue.html_url}}">{{issue.title}}</a>
+                                <a target="_blank" ng-click="$ctrl.clickOnIssue(issue.title)" ng-href="{{issue.html_url}}">{{issue.title}}</a>
                             </li>
                         </ul>
                     </td>
@@ -20,6 +20,10 @@
                     </td>
                 </tr>
             </table>
+            <p>Output Message : {{$ctrl.msg}}</p>
+            <p>StatusCode: {{$ctrl.statusval}}</p>
+            <p>Status: {{$ctrl.statustext}}</p>
+            <p>Response Headers: {{$ctrl.headers}}</p>
         </div>
     </div>
 </div>
