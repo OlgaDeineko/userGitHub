@@ -1,0 +1,8 @@
+@import "../../styles/variabels";
+
+.users {
+  .ng-table th.sortable.sort-desc,
+  .ng-table th.sortable.sort-asc {
+    background: none;
+  }
+}

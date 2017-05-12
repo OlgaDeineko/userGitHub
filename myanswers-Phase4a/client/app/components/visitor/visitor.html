@@ -1,0 +1,99 @@
+<div class="visitor">
+  <div class="visitor-bg-heading">
+
+    <!--actions-->
+    <div class="col-md-12">
+      <div class="visitor-actions pull-right">
+        <button class="button button-primary"
+                ui-sref="visitor({categoryId: ''})"
+                tooltip-placement="bottom"
+                uib-tooltip="Go to home"
+                ng-click="$ctrl.searchModel = ''">
+          Home
+        </button>
+
+        <button class="icon-button" ng-click="$ctrl.logout()"
+                tooltip-placement="bottom"
+                uib-tooltip="Log Out">
+          <i class="fa fa-sign-out" aria-hidden="true"></i>
+        </button>
+
+      </div>
+
+    </div><!--END:actions-->
+
+    <!--title-->
+    <div class="visitor-title text-center">
+      <h1>{{ $ctrl.name }}</h1>
+    </div><!--END:title-->
+
+    <!--search form-->
+    <div class="row algolia-search-input">
+      <div class="col-md-10 col-md-offset-1">
+        <i class=" fa fa-search"></i>
+        <input class="form-control" placeholder="Search FAQ by Algolia" ng-model="$ctrl.searchModel">
+      </div>
+    </div><!--END:search form-->
+
+  </div>
+
+  <div class="container-fluid" ng-if="!$ctrl.searchModel">
+    <!--tree-->
+    <div class="col-md-7 col-md-offset-1 visitor-tree">
+
+      <!--parent category-->
+      <a ui-sref="visitor({categoryId: $ctrl.tree.parent_id})"
+         class="visitor-tree-prev"
+         ng-if="$ctrl.currentCategory != 1">
+        <i class="fa fa-folder-open"></i>
+        {{$ctrl.tree.name}}
+      </a><!--parent category-->
+
+      <!--categories-->
+      <div class="visitor-tree-item visitor-tree-item-category"
+           ng-class="{'item-column': $ctrl.currentCategory == 1}"
+           ng-repeat="item in $ctrl.tree.categories | orderBy: $ctrl.order.cat">
+        <a ui-sref="visitor({categoryId: item.id})">
+          <i class="fa fa-folder"></i>
+          {{item.name}}
+        </a>
+      </div><!--END:categories-->
+
+      <!--articles-->
+      <div class="visitor-tree-item visitor-tree-item-category"
+           ng-class="{'item-column': $ctrl.currentCategory == 1}"
+           ng-repeat="item in $ctrl.tree.articles | orderBy: $ctrl.order.faq">
+        <a ui-sref="visitorArticle({faqId: item.id, categoryId: $ctrl.currentCategory})">
+          <i class="fa fa-question-circle"></i>
+          {{item.question}}
+        </a>
+      </div><!--END:articles-->
+
+      <!--data is empty-->
+      <div ng-if="!$ctrl.tree.categories.length && !$ctrl.tree.articles.length">
+        <h3 class="text-center">
+          Empty
+        </h3>
+      </div><!--END: data is empty-->
+    </div><!--END:tree-->
+
+    <!--Most viewed FAQs-->
+    <div class="col-md-3 visitor-last-created" ng-if="$ctrl.articles.length">
+      <h2>Most viewed FAQs within {{$ctrl.tree.type == 'subcategory' ? $ctrl.tree.parent.name : $ctrl.tree.name}}:</h2>
+      <div class="visitor-last-created-item" ng-repeat="item in $ctrl.articles | orderBy: '-hits_count' | limitTo: 10">
+        <a ui-sref="visitorArticle({faqId: item.id, categoryId: item.categoryId})">
+          <i class="fa fa-question-circle"></i>
+          {{item.question}}
+        </a>
+      </div>
+    </div><!--END: Most viewed FAQs-->
+  </div>
+
+  <!--search result from algolia-->
+  <algolia-search
+    ng-if="$ctrl.searchModel"
+    search-model="$ctrl.searchModel"
+    category="$ctrl.tree.hierarchical.lvl2 || $ctrl.tree.hierarchical.lvl1 || $ctrl.tree.hierarchical.lvl0">
+  </algolia-search><!--END:search result from algolia-->
+</div>
+

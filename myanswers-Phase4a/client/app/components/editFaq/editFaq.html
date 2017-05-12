@@ -1,0 +1,221 @@
+<navbar></navbar>
+<div class="content-wrapper faq">
+
+  <!--left sidebar article-->
+  <div class="col-md-2 faq-left-sidebar">
+    <!--Action buttons-->
+    <button class="button button-primary"
+            ng-if="$ctrl.mode == 'update'"
+            ng-click="$ctrl.remove()"
+            confirm="FAQ.CONFIRM">
+      <i class="fa fa-trash-o"></i>
+      {{'BUTTON.DELETE' | translate}}
+    </button><!--END: Action buttons-->
+  </div><!--END: left sidebar article-->
+
+  <!--Content article-->
+  <div class="col-md-7 faq-content">
+
+    <!--Counts word-->
+    <div class="text-right faq-counts" ng-if="$ctrl.faq.countWords">
+      <p>
+        {{$ctrl.faq.countWords}} {{$ctrl.faq.countWords > 1 ? 'FAQ.WORDS': 'FAQ.WORD' | translate}}
+        {{$ctrl.faq.countChars}}
+        {{$ctrl.faq.countChars > 1 ? 'FAQ.CHARACTERS': 'FAQ.CHARACTER' | translate}}, {{$ctrl.faq.timeReads}}
+        {{'FAQ.READING_TIME' | translate}}
+      </p>
+    </div><!--END: Counts word-->
+
+    <!--Status-->
+    <div class="row faq-status">
+      <div class="col-md-3 col-md-offset-9">
+        <div class="ma-select"
+             uib-dropdown>
+          <div class="dropdown-toggle form-control"
+               role-accesses
+               disable-for="['contributor']"
+               uib-dropdown-toggle>
+            <i class="fa fa-angle-down dropdown-angle"></i>
+            {{ 'FAQ.STATUSES.'+(($ctrl.faqStatuses | filter: {code: $ctrl.faq.status})[0].name | uppercase) |
+            translate}}
+          </div>
+
+          <ul class="dropdown-menu">
+            <li ng-repeat="item in $ctrl.faqStatuses" ng-click="$ctrl.faq.status = item.code">
+              {{'FAQ.STATUSES.'+item.name | uppercase | translate}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!--END: Status-->
+
+    <!--Question-->
+    <div class="faq-question">
+      <label>{{'FAQ.LABEL_TITLE' | translate}}</label>
+      <input class="form-control" placeholder="{{'FAQ.LABEL_TITLE' | translate}} {{'FAQ.TITLE' | translate}}"
+             ng-model="$ctrl.faq.question">
+    </div><!--END: Question-->
+
+    <!--Answer-->
+    <div class="faq-answer">
+      <label>{{'FAQ.CONTENT' | translate}}</label>
+      <textarea ui-tinymce="$ctrl.tinymceOptions" ng-model="$ctrl.faq.answer"></textarea>
+      <input name="image" type="file" id="tinymceUploader" class="hidden" onchange="">
+    </div><!--END:Answer-->
+
+    <!--Tags-->
+    <div class="faq-tags">
+      <label>{{'FAQ.KEYWORDS' | translate}}</label>
+      <tags-input ng-model="$ctrl.faq.tags"
+                  display-property="name"
+                  placeholder="{{'FAQ.KEYWORDS_PLACEHOLDER' | translate}}">
+      </tags-input><!--END: Tags-->
+    </div>
+
+    <!--Remarks-->
+    <div class="faq-remarks">
+      <label>{{'FAQ.INTERNAL_COMMENT' | translate}}</label>
+      <textarea class="form-control remarks"
+                ng-model="$ctrl.faq.remarks"
+                rows="4"
+                placeholder="{{'FAQ.INTERNAL_COMMENT_PLACEHOLDER' | translate}}">
+      </textarea>
+    </div><!--END: Remarks-->
+
+  </div><!--END: Content article-->
+
+  <!--right sidebar article-->
+  <div class="col-md-3 faq-right-sidebar edit">
+    <!--Action buttons-->
+    <div class="row faq-actions">
+      <div class="col-md-6">
+        <cancel-btn title="'BUTTON.CANCEL'" btn-class="'button-full'"></cancel-btn>
+      </div>
+      <div class="col-md-6">
+        <button class="button button-primary button-full" ng-click="$ctrl.save();"
+                ng-disabled="!$ctrl.faq.question || !$ctrl.faq.answer">
+          {{'BUTTON.'+$ctrl.mode | uppercase | translate}}
+        </button>
+      </div>
+    </div><!--END: Action buttons-->
+
+    <!--Visibility-->
+    <div class="faq-visibility">
+      <h4>{{'FAQ.VISIBILITY' | translate}}<span class="coming-soon"></span></h4>
+      <div class="ma-select"
+           uib-dropdown>
+        <div class="dropdown-toggle form-control"
+             uib-dropdown-toggle>
+          <i class="fa fa-angle-down dropdown-angle"></i>
+
+          <i class="fa {{($ctrl.faqVisibility | filter: {code: $ctrl.faq.visibility})[0].icon}}"></i>
+          {{($ctrl.faqVisibility | filter: {code: $ctrl.faq.visibility})[0].name}}
+        </div>
+
+        <ul class="dropdown-menu">
+          <li ng-repeat="item in $ctrl.faqVisibility" ng-click="$ctrl.faq.visibility = item.code">
+            <i class="fa {{item.icon}}"></i>
+            {{item.name}}
+          </li>
+        </ul>
+      </div>
+    </div><!--END: Visibility-->
+
+    <!--Visibility-->
+    <div class="faq-user-visibility"
+         role-accesses
+         invisible-for="['contributor']">
+      <h4>{{'FAQ.VISIBILITY_USER' | translate}}</h4>
+      <check-users ng-if="$ctrl.parentCategory && $ctrl.faq"
+                   update-mode="$ctrl.mode == 'update'"
+                   parent-users="$ctrl.parentCategory.id == 1 ? 'all' : $ctrl.parentCategory.granted_access"
+                   selected="$ctrl.faq.granted_access">
+      </check-users>
+    </div><!--END: Visibility-->
+
+    <!--Categories-->
+    <div class="faq-category">
+      <h4>{{'FAQ.PUBLISH' | translate}}</h4>
+      <div class="ma-select"
+           uib-dropdown>
+        <div class="dropdown-toggle form-control"
+             uib-dropdown-toggle>
+          <i class="fa fa-angle-down dropdown-angle"></i>
+          {{($ctrl.categories | filter: {id: $ctrl.faq.categoryId}:true)[0].name}}
+        </div>
+
+        <ul class="dropdown-menu">
+          <li ng-repeat="item in $ctrl.categories" ng-click="$ctrl.faq.categoryId = item.id">{{item.name}}</li>
+        </ul>
+      </div>
+    </div><!--END: Categories-->
+
+    <!--Author-->
+    <div class="faq-author">
+      <h4>{{'FAQ.AUTHOR' | translate}}</h4>
+      <div class="ma-select"
+           uib-dropdown>
+        <div class="dropdown-toggle form-control"
+             uib-dropdown-toggle
+             ng-disabled="true">
+          <i class="fa fa-angle-down dropdown-angle"></i>
+          {{$ctrl.faq.author}}
+        </div>
+      </div>
+    </div><!--END: Author-->
+
+    <!--Language-->
+    <div class="faq-language">
+      <h4>{{'FAQ.LANGUAGE' | translate}}</h4>
+      <div class="ma-select"
+                             uib-dropdown>
+        <div class="dropdown-toggle form-control"
+             uib-dropdown-toggle>
+          <i class="fa fa-angle-down dropdown-angle"></i>
+          <span class="flag-icon {{($ctrl.languages | filter: {code: $ctrl.faq.lang})[0].icon}}"></span>
+          {{'LANGUAGES.'+(($ctrl.languages | filter: {code: $ctrl.faq.lang})[0].name) | uppercase | translate}}
+        </div>
+
+        <ul class="dropdown-menu">
+          <li ng-repeat="item in $ctrl.languages" ng-click="$ctrl.faq.lang = item.code">
+            <span class="flag-icon {{item.icon}}"></span>
+            {{'LANGUAGES.'+item.name | uppercase | translate}}
+          </li>
+        </ul>
+      </div>
+    </div><!--END: Language-->
+
+    <!--Attachments-->
+    <div class="faq-attachment">
+      <h4>{{'FAQ.ATTACHMENTS' | translate}}</h4>
+
+      <div flow-init
+           flow-attrs="{accept:'image/*'}"
+           flow-file-success="$file.msg = $message"
+           flow-file-added="$ctrl.addedNewFile($file, $event, $flow )"
+           class="faq-uploader">
+
+        <button
+          class="upload-button"
+          flow-btn
+          ng-disapbled="$ctrl.loadingFileFlag"
+          flow-attrs="{accept:'image/*'}">
+          <a>{{'BUTTON.UPLOAD_ATTACHMENT' | translate}}</a>
+        </button>
+
+        <div class="files" ng-repeat="item in $ctrl.faq.attachments">
+          <a ng-href="{{item.attachment_url}}" target="_blank" class="files-name">{{item.name}}</a>
+          <i class="fa fa-remove" ng-click="$ctrl.removeOldFile(item, $index)"></i>
+        </div>
+
+        <div class="files" ng-repeat="item in $flow.files">
+          <div class="files-name">{{item.name}}</div>
+          <i class="fa fa-remove" ng-click="$ctrl.removeFile($index, $flow)"></i>
+        </div>
+
+      </div>
+    </div><!--END:Attachments-->
+
+  </div><!--END: right sidebar article-->
+
+</div>

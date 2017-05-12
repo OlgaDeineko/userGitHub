@@ -1,0 +1,10 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+dist/
+.idea/
+/dist.zip
+/myanswers.pem

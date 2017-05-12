@@ -1,0 +1,53 @@
+@import "../../styles/variabels";
+.settings {
+  &-tree-title {
+    font-weight: bold;
+    font-size: $fontSize;
+    margin: 0;
+    h4 {
+      color: $greyTextColor;
+    }
+
+  }
+
+  &-actions {
+    position: relative;
+    margin-bottom: 40px;
+
+  }
+  .list-group-item {
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    background: none;
+    font-size: $fontSize;
+    font-weight: bold;
+
+    &:hover {
+      background-color: rgba(#000, 0.1);
+    }
+    a{
+      text-decoration: none;
+      &,&:hover,&:visited {
+        color:$darkTextColor;
+      }
+    }
+
+  }
+  .setting-description {
+    font-size: $fontSm;
+    font-weight: normal;
+    background: none;
+    color: $lightGreyTextColor;
+  }
+  &-title-active {
+    color:#4aa3df;
+  }
+.content{
+  margin: 10% 0;
+}
+.footer{
+  clear: both;
+}
+}
+

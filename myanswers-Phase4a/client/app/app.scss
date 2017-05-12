@@ -1,0 +1,30 @@
+@import "styles/variabels";
+@import "styles/common";
+
+app, html, ui-view {
+  height: 100%;
+  background-color: $bgColor;
+  display: block
+}
+
+a,
+a:hover {
+  color: $primaryColor;
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  // browsers default to 16px for font-size,
+  // so setting top-level font-size to 62.5%
+  // scales 1rem to equal 10px.
+  font-size: $fontSize;
+  color: $darkTextColor;
+  position: relative;
+  background-color: $bgColor;
+  font-family: Arial, sans-serif;
+}

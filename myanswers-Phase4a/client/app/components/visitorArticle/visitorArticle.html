@@ -1,0 +1,95 @@
+<div class="visitor-faq-bg-heading">
+
+  <div class="row algolia-search-input">
+    <div class="col-md-10 col-md-offset-1">
+      <i class="fa fa-search"></i>
+      <input class="form-control" placeholder="Search FAQ by Algolia" ng-model="$ctrl.searchModel">
+    </div>
+  </div>
+
+</div>
+
+<div class="content visitor-faq" ng-if="!$ctrl.searchModel">
+
+  <!--Content article-->
+  <div class="col-md-8 col-md-offset-2 faq-content">
+
+    <!--Question-->
+    <div class="faq-question">
+      <h2>{{$ctrl.faq.question}}</h2>
+
+      <breadcrumbs home="'Home'"
+                   current="$ctrl.currentCategoryId"
+                   last="$ctrl.faq.question"></breadcrumbs>
+    </div><!--END: Question-->
+
+    <!--Counts views-->
+    <div class="faq-counts">
+      Updated by {{$ctrl.faq.author}} on {{$ctrl.faq.updated_at * 1000 | date : "dd/MM/yy HH:mm:ss"}}
+    </div><!--END: Counts views-->
+
+    <!--Tags-->
+    <div class="faq-tags">
+      <div class="faq-tag" ng-repeat="item in $ctrl.faq.tags track by $index">
+        {{item.name}}
+      </div>
+    </div><!--END: Tags-->
+
+    <!--Copy To Clipboard-->
+    <div class="container-fluid">
+      <!--faq analytics-->
+      <i class="pull-right fa fa-bar-chart faq-views">
+        <div class="faq-views-analytics">
+          <h4>Analytics</h4>
+          <p><i class="fa fa-eye"></i>{{$ctrl.faq.hits_count}} view{{$ctrl.faq.hits_count > 1 ? 's': ''}}</p>
+          <p><i class="fa fa-smile-o"></i> {{$ctrl.faq.likes}} like{{$ctrl.faq.likes > 1 ? 's': ''}}</p>
+          <p><i class="fa fa-frown-o"></i> {{$ctrl.faq.dislikes}} dislike{{$ctrl.faq.dislikes > 1 ? 's': ''}}</p>
+        </div>
+      </i><!--END: faq analytics-->
+
+      <button class="button button-primary pull-right faq-copy"
+              clipboard
+              uib-tooltip="Copy to clipboard"
+              tooltip-placement="up"
+              text="$ctrl.faq.answerWithoutTags"
+              ng-click="$ctrl.copyToClipboard()">
+        <i class="fa fa-clipboard"></i>
+      </button>
+    </div><!--END: Copy To Clipboard-->
+
+    <!--Counts word-->
+    <div class="faq-counts">
+      <p>
+        {{$ctrl.faq.countWords}} word{{$ctrl.faq.countWords > 1 ? 's': ''}} {{$ctrl.faq.countChars}}
+        character{{$ctrl.faq.countChars > 1 ? 's': ''}}, {{$ctrl.faq.timeReads}} reading time
+      </p>
+    </div><!--END: Counts word-->
+
+    <!--Answer-->
+    <div class="faq-answer">
+      <div ng-bind-html="$ctrl.convertHTML($ctrl.faq.answer)">
+      </div>
+    </div><!--END: Answer-->
+
+    <div class="faq-remarks">
+      <h4>Internal comment</h4>
+      <div class="one-remark">{{$ctrl.faq.remarks}}</div>
+    </div>
+
+    <!--faq-attachment-->
+    <div class="faq-attachment" ng-if="$ctrl.faq.attachments.length">
+      <h4>Attachments:</h4>
+
+      <div class="files" ng-repeat="item in $ctrl.faq.attachments">
+        <a ng-href="{{item.attachment_url}}" target="_blank" class="files-name">
+          <i class="fa fa-file-{{item.type == 'pdf'? 'pdf': 'word'}}-o"></i>
+          <span>{{item.name}}</span>
+        </a>
+      </div>
+    </div><!--END: Attachments-->
+
+  </div><!--END: Content article-->
+
+</div>
+
+<algolia-search search-model="$ctrl.searchModel" category="'Root'"></algolia-search>

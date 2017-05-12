@@ -1,0 +1,13 @@
+@import "../../common/settingsTree/settingsTree.scss";
+.preview {
+  width: 100px;
+  height: auto;
+}
+.color-picker-swatch-only,
+.color-picker-swatch {
+  height:20px;
+  width: 20px;
+  margin:0;
+  padding:0;
+  display:inline-block;
+}

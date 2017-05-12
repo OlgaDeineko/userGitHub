@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="modal-title">{{'USERS.'+$ctrl.mode | uppercase | translate}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+
+  <form
+    name="createUserForm"
+    sf-schema="$ctrl.schema"
+    sf-model="$ctrl.newUser">
+  </form>
+
+</div>
+
+<div class="modal-footer">
+
+  <button class="button" ng-click="$ctrl.cancel()">
+    {{'BUTTON.CANCEL' | translate}}
+  </button>
+
+  <button class="button button-primary"
+          ng-disabled="createUserForm.$invalid"
+          ng-click="$ctrl.save(createUserForm, $ctrl.newUser)">
+    {{'BUTTON.SAVE' | translate}}
+  </button>
+
+</div>

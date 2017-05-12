@@ -1,0 +1,93 @@
+<navbar></navbar>
+<div class="content-wrapper faq faq-view">
+
+  <div class="col-md-2"></div>
+
+  <!--Content article-->
+  <div class="col-md-7 faq-content">
+    <!--Tags-->
+    <div class="faq-tags">
+      <div class="faq-tag" ng-repeat="item in $ctrl.faq.tags track by $index">
+        {{item.name}}
+      </div>
+    </div><!--END: Tags-->
+
+    <!--Counts word-->
+    <div class="text-right faq-counts">
+      <p>
+        {{$ctrl.faq.countWords}} {{$ctrl.faq.countWords > 1 ? 'FAQ.WORDS': 'FAQ.WORD' | translate}} {{$ctrl.faq.countChars}}
+        {{$ctrl.faq.countChars > 1 ? 'FAQ.CHARACTERS': 'FAQ.CHARACTER' | translate}}, {{$ctrl.faq.timeReads}} {{'FAQ.READING_TIME' | translate}}
+      </p>
+    </div><!--END: Counts word-->
+
+    <!--Question-->
+    <div class="faq-question">
+      <h2>{{$ctrl.faq.question}}</h2>
+    </div><!--END: Question-->
+
+    <!--Answer-->
+    <div class="faq-answer">
+      <div ng-bind-html="$ctrl.convertHTML($ctrl.faq.answer)">
+      </div>
+    </div><!--END: Answer-->
+
+    <!--Remarks-->
+    <div class="faq-remarks" ng-if="$ctrl.faq.remarks">
+      <h4>{{'FAQ.INTERNAL_COMMENT' | translate}}</h4>
+      <div class="one-remark">{{$ctrl.faq.remarks}}</div>
+    </div><!--END: Remarks-->
+
+  </div><!--END: Content article-->
+
+  <!--left right article-->
+  <div class="col-md-3 faq-right-sidebar">
+
+    <!--Action buttons-->
+    <div class="row faq-actions" >
+      <div class="col-md-6 col-md-offset-3">
+        <button class="button button-primary button-full"
+                role-accesses
+                disable-for="['contributor']"
+                disable-if="{{$ctrl.faq.status != 'draft' || !$ctrl.faq.isOwner}}"
+                ng-click="$ctrl.goTo()">
+          {{'BUTTON.EDIT' | translate}}
+        </button>
+      </div>
+    </div><!--END: Action buttons-->
+
+    <!--Categories-->
+    <div class="faq-category">
+      <h4>{{'FAQ.CATEGORIES' | translate}}</h4>
+      <div>{{$ctrl.faq.category.name}}</div>
+    </div><!--END: Categories-->
+
+    <!--Visibility-->
+    <div class="faq-visibility" ng-if="$ctrl.faq.visibility">
+      <h4>{{'FAQ.VISIBILITY' | translate}}<span class="coming-soon"></span></h4>
+      <div class="text-capitalize">{{$ctrl.faq.visibility}}</div>
+    </div><!--END: Visibility-->
+
+    <!--Author-->
+    <div class="faq-author" ng-if="$ctrl.faq.author">
+      <h4>{{'FAQ.AUTHOR' | translate}}</h4>
+      <div>{{$ctrl.faq.author}}</div>
+    </div><!--END: Author-->
+
+    <!--Language-->
+    <div class="faq-language" ng-if="$ctrl.faq.lang">
+      <h4>{{'FAQ.LANGUAGE' | translate}}</h4>
+      <div>{{'LANGUAGES.'+$ctrl.faq.language.name | uppercase | translate}}</div>
+    </div><!--END: Language-->
+
+    <!--faq-attachment-->
+    <div class="faq-attachment" ng-if="$ctrl.faq.attachments.length">
+      <h4>{{'FAQ.ATTACHMENTS' | translate}}</h4>
+
+      <div class="files" ng-repeat="item in $ctrl.faq.attachments">
+        <a ng-href="{{item.attachment_url}}" target="_blank" class="files-name">{{item.name}}</a>
+      </div>
+    </div><!--END: Attachments-->
+
+  </div><!--END: right sidebar article-->
+
+</div>

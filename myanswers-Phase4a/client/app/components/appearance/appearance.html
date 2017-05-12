@@ -1,0 +1,170 @@
+<div class="container-fluid appearance">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-2">
+      <div class="header">
+        <h3 class="settings-title-active">{{'SETTINGS.APPEARANCE' | translate}}</h3>
+        <div class="row">
+          <div class="col-md-8">
+            <p class="setting-description pull-left">{{'SETTINGS.CUSTOMISE_APPEARANCE' | translate}}</p>
+          </div>
+          <div class="col-md-4">
+            <div class="ma-select"
+                 uib-dropdown>
+              <div class="dropdown-toggle form-control"
+                   role-accesses
+                   disable-for="['contributor']"
+                   uib-dropdown-toggle>
+                <i class="fa fa-angle-down dropdown-angle"></i>
+              </div>
+              <ul class="dropdown-menu">
+                <li ng-repeat="item in $ctrl.knowledge_base">
+                  {{item.name | uppercase}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="appearance-content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_LOGO' | translate}}</label>
+              <div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                   class="ng-scope">
+                <div class="row">
+                  <div class="thumbnail col-xs-3" ng-show="!$flow.files.length">
+                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=Upload+an+Image">
+                  </div>
+                  <div class="thumbnail ng-hide" ng-show="$flow.files.length">
+                    <img class="preview " flow-img="$flow.files[0]">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file"
+                                                                                                             style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-info ng-hide" ng-show="$flow.files.length" flow-btn="">Change<input type="file"
+                                                                                                           style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-danger ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                  Remove
+                </span>
+                </div>
+             </div>
+              </div>
+           </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_FAVICON' | translate}}</label>
+              <div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                   class="ng-scope">
+                <div class="row">
+                  <div class="thumbnail col-xs-3" ng-show="!$flow.files.length">
+                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=Upload+an+Image">
+                  </div>
+                  <div class="thumbnail ng-hide" ng-show="$flow.files.length">
+                    <img class="preview " flow-img="$flow.files[0]">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file"
+                                                                                                           style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-info ng-hide" ng-show="$flow.files.length" flow-btn="">Change<input type="file"
+                                                                                                             style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-danger ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                      Remove
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_KNOWLEDGE_BASE_NAME' | translate}}</label>
+              <input type="text" class="form-control" placeholder="AcmeSurf Help Center">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_HEADER_COLOR' | translate}}</label>
+              <p><color-picker options="options" ng-model="$ctrl.headColor" placeholder="#ffff"></color-picker></p>
+            </div>
+
+            <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_LINK_COLOR' | translate}}</label>
+              <color-picker options="options" ng-model="$ctrl.headColor"></color-picker>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_HEADER_IMAGE' | translate}}</label>
+
+              <div class="row">
+              <div flow-init="{singleFile:true}" flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+                   class="ng-scope">
+                <div class="row">
+                  <div class="col-md-10 col-md-offset-2">
+                  <div class="thumbnail col-xs-3" ng-show="!$flow.files.length">
+                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=Upload+an+Image">
+                  </div>
+                  <div class="thumbnail ng-hide" ng-show="$flow.files.length">
+                    <img class="preview " flow-img="$flow.files[0]">
+                  </div>
+                </div>
+                <div class="row clearfix">
+                  <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file"
+                                                                                                             style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-info ng-hide" ng-show="$flow.files.length" flow-btn="">Change<input type="file"
+                                                                                                           style="visibility: hidden; position: absolute;"></span>
+                  <span class="btn btn-danger ng-hide" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+                    Remove
+                </span>
+                </div>
+                </div>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+          <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_FONT' | translate}}</label>
+              <input type="text" class="form-control"
+                     placeholder="&#34;HelveticaNeue&#34;,&#34;Helvetica Neue&#34;,Helvetica, Arial, sans-serif">
+          </div>
+          <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_FONT_TITLE' | translate}}</label>
+              <input type="text" class="form-control"
+                     placeholder="&#34;HelveticaNeue&#34;,&#34;Helvetica Neue&#34;,Helvetica, Arial, sans-serif">
+          </div>
+          <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_LOGO_URL' | translate}}</label>
+              <input type="text" class="form-control" placeholder="For example http://www.mywebsite.com">
+          </div>
+          <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_CONTACT_US_URL' | translate}}</label>
+              <input type="text" class="form-control" placeholder="For example http://www.mywebsite.com/contact">
+          </div>
+          <div class="form-group">
+              <label>{{'SETTINGS.APPEARANCE_SEARCH_BAR_TEXT' | translate}}</label>
+              <input type="text" class="form-control" placeholder="What are you searching?">
+          </div>
+      </div>
+
+      <div class="footer">
+            <button class="button button-primary"
+                    ng-click="$ctrl.save()">
+              {{'BUTTON.SAVE' | translate}}
+            </button>
+      </div>
+
+    </div>
+  </div>
+</div>

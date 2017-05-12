@@ -1,0 +1,9 @@
+@import "../../styles/variabels";
+
+.registration {
+  &-actions{
+    button:last-child{
+      margin-top: 15px;
+    }
+  }
+}

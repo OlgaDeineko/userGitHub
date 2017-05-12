@@ -1,0 +1,37 @@
+<div class="container-fluid choose-subdomain">
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-4">
+      <h1 class="text-center">{{ $ctrl.name | translate}}</h1>
+
+      <form class="form">
+        <div class="form-group">
+          <label for="inputPassword2">{{'SUBDOMAIN.SUBDOMAIN' | translate}}</label>
+          <input type="text"
+                 class="form-control"
+                 id="inputPassword2"
+                 placeholder="{{'SUBDOMAIN.NAME' | translate}}"
+                 ng-model="$ctrl.subdomain">
+        </div>
+      </form>
+      <div class="row choose-subdomain-actions">
+        <div class="col-md-6 col-md-offset-3">
+          <button type="button"
+                  class="button button-primary button-full"
+                  ng-click="$ctrl.moveTo($ctrl.subdomain)"
+                  ng-disabled="!$ctrl.subdomain.length">
+            {{'BUTTON.CHOOSE' | translate}}
+          </button>
+
+          <button class="button button-full" ui-sref="registration">
+            {{'BUTTON.REGISTRATION' | translate}}
+          </button>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+</div>

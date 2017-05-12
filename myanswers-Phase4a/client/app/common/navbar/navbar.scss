@@ -1,0 +1,49 @@
+@import "../../styles/variabels";
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $navbar-width;
+  border-radius: 0;
+  margin: 0;
+  background-color: $navbarBg;
+  z-index: 1;
+  border: none;
+
+  &-item {
+    color: $lightTextColor;
+    text-align: center;
+    cursor: pointer;
+
+    a {
+      color: $navbarColor;
+      display: block;
+      padding: $navbar-width/4;
+      font-size: $navbar-width/2;
+      line-height: 1;
+
+      &.active{
+        color: white;
+        background-color: $navbarActive;
+
+        &:hover{
+          color: white;
+          background: none;
+        }
+      }
+
+      &:hover{
+        color: white;
+        background: none;
+      }
+    }
+
+    &.logout{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+  }
+}

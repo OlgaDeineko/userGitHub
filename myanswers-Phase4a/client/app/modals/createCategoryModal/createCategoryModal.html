@@ -1,0 +1,37 @@
+<div class="modal-header">
+  <h3 class="modal-title" id="modal-title">{{'CATEGORY.'+$ctrl.mode+'_'+$ctrl.type | uppercase | translate}}</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+
+  <form
+    name="createCategoryForm"
+    sf-schema="$ctrl.schema"
+    sf-model="$ctrl.newCategory">
+  </form>
+
+  <div class="form-group">
+    <label>{{'CATEGORY.VISIBILITY_USER' | translate}}</label>
+    <!--TODO: I'm not sure-->
+    <!-- selected="$ctrl.newCategory.granted_access" -->
+    <check-users ng-if="$ctrl.parentCategory"
+                 update-mode="$ctrl.mode == 'update'"
+                 parent-users="$ctrl.parentCategory.id == 1 ? 'all' : $ctrl.parentCategory.granted_access"
+                 selected="$ctrl.newCategory.granted_access.length == 0 ? 'all' : $ctrl.newCategory.granted_access">
+    </check-users>
+  </div>
+</div>
+
+<div class="modal-footer">
+
+  <button class="button" ng-click="$ctrl.cancel()">
+    {{'BUTTON.CANCEL' | translate}}
+  </button>
+
+  <button class="button button-primary"
+          ng-disabled="createCategoryForm.$invalid"
+          ng-click="$ctrl.save(createCategoryForm, $ctrl.newCategory)">
+    {{'BUTTON.SAVE' | translate}}
+  </button>
+
+</div>

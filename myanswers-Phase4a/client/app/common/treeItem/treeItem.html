@@ -1,0 +1,63 @@
+<div class="tree-item" dnd-nodrag>
+  <div class="tree-item-drag">
+    <i class="fa fa-bars"
+       dnd-handle
+       ng-if="$ctrl.dragIcon">
+    </i>
+  </div>
+
+  <div class="tree-item-title tree-item-type-{{$ctrl.type}}">
+
+    <a class="tree-item-icon"
+       data-nodrag
+       ng-click="$ctrl.toggleChildren($ctrl.item)">
+      <i class="tree-icon-folder fa {{$ctrl.icon + ($ctrl.item.expanded ?'-open':'') }}"
+            aria-hidden="true">
+      </i>
+    </a>
+
+    <a ng-click="$ctrl.goTo($ctrl.item.id)">
+      <span ng-if="$ctrl.item.status && $ctrl.item.status == 'draft'">{{'FAQ.STATUSES.DRAFT' | translate | uppercase}}</span>
+      {{$ctrl.item[$ctrl.title]}}
+    </a>
+
+  </div>
+
+  <div class="tree-item-update">
+    {{$ctrl.item.updated_at * 1000 | date : "dd/MM/yy HH:mm:ss"}}
+  </div>
+
+  <div class="tree-item-lang">
+    {{'LANGUAGES.'+($ctrl.item.language.name | uppercase) | translate}}
+  </div>
+
+  <div class="tree-item-author">
+    {{$ctrl.item.author}}
+  </div>
+
+  <div class="tree-item-actions" ng-if="$ctrl.$state.current.name != 'visitor'">
+    <button class="icon-button"
+            ng-click="$ctrl.edit($ctrl.item.id)"
+            role-accesses
+            disable-for="['contributor']"
+            disable-if="{{$ctrl.item.status != 'draft' || !$ctrl.item.isOwner}}"
+            tooltip-placement="up"
+            uib-tooltip="{{$ctrl.type == 'faq' ? 'FAQ.EDIT' : ('CATEGORY.EDIT_'+$ctrl.item.type | uppercase) | translate}}">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </button>
+
+    <button class="icon-button"
+            ng-click="$ctrl.remove($ctrl.item.id)"
+            confirm="{{$ctrl.type == 'faq' ? 'FAQ.CONFIRM' : 'CATEGORY.CONFIRM_'+$ctrl.item.type}}"
+            role-accesses
+            disable-for="['contributor']"
+            disable-if="{{$ctrl.item.status != 'draft' || !$ctrl.item.isOwner}}"
+            ng-disabled="$ctrl.item.status == 'trash'"
+            tooltip-placement="up"
+            uib-tooltip="{{$ctrl.type == 'faq' ? 'FAQ.REMOVE' : ('CATEGORY.REMOVE_'+$ctrl.item.type | uppercase) | translate}}">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+
+<div class="tree-item-divider"></div>

@@ -1,0 +1,17 @@
+<ol class="breadcrumb">
+  <li>
+    <a href="#" ng-click="$ctrl.goTo('')">
+      {{$ctrl.home | translate}}
+    </a>
+  </li>
+  <li ng-repeat="item in $ctrl.breadcrumbs">
+    <a href="#" ng-click="$ctrl.goTo(item.id)">
+      {{item.name}}
+    </a>
+  </li>
+  <li ng-if="$ctrl.last && $ctrl.last.length">
+    <a href="#" >
+      {{$ctrl.last}}
+    </a>
+  </li>
+</ol>

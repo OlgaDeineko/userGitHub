@@ -1,0 +1,72 @@
+<nav class="navbar">
+
+  <div class="navbar-item">
+    <a ui-sref="visitor"
+       ui-sref-active="active"
+       target="_blank"
+       tooltip-placement="right"
+       uib-tooltip="{{'NAV.VIEW' | translate}}">
+      <i class="fa fa-eye" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="navbar-item">
+    <a ui-sref="admin.category({categoryId: ''})"
+       ui-sref-active="active"
+       tooltip-placement="right"
+       uib-tooltip="{{'DASHBOARD.TITLE' | translate}}">
+      <i class="fa fa-tachometer" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="navbar-item"
+       role-accesses
+       visible-for="['admin','superAdmin']">
+    <a ui-sref="admin.users"
+       ui-sref-active="active"
+       tooltip-placement="right"
+       ng-disabled="true"
+       uib-tooltip="{{'USERS.TITLE' | translate}}">
+      <i class="fa fa-users" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="navbar-item"
+       role-accesses
+       visible-for="['superAdmin']">
+    <a ng-click="$ctrl.openChooseDomain()"
+       tooltip-placement="right"
+       uib-tooltip="{{'NAV.CHOOSE_SUBDOMAIN' | translate}}">
+      <i class="fa fa-key" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!--<div class="navbar-item"-->
+       <!--role-accesses="{only: ['admin','superAdmin']}">-->
+    <!--<a ng-click="$ctrl.openChooseLanguage()"-->
+       <!--tooltip-placement="right"-->
+       <!--uib-tooltip="{{'LANGUAGES.CHOOSE_LANGUAGE' | translate}}">-->
+      <!--<i class="fa fa-cog" aria-hidden="true"></i>-->
+    <!--</a>-->
+  <!--</div>-->
+
+  <div class="navbar-item"
+       role-accesses
+       visible-for="['admin','superAdmin']">
+    <a ui-sref="admin.settings"
+       ui-sref-active="active"
+       tooltip-placement="right"
+       uib-tooltip="{{'SETTINGS.TITLE' | translate}}">
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <div class="navbar-item logout">
+    <a ng-click="$ctrl.logout()"
+       tooltip-placement="right"
+       uib-tooltip="{{'NAV.LOG_OUT' | translate}}">
+      <i class="fa fa-sign-out" aria-hidden="true"></i>
+    </a>
+  </div>
+
+</nav>

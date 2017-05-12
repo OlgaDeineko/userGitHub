@@ -1,0 +1,33 @@
+<div class="container-fluid chooseLanguage">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="header">
+        <h3 class="settings-title-active">{{'LANGUAGES.TITLE' | translate}}</h3>
+        <p class="setting-description">{{'SETTINGS.CHANGE_LANGUAGE' | translate}}</p>
+      </div>
+      <div class="content">
+        <div class="ma-select"
+             uib-dropdown>
+          <div class="dropdown-toggle form-control"
+               uib-dropdown-toggle>
+            <i class="fa fa-angle-down dropdown-angle"></i>
+            <span class="flag-icon {{($ctrl.languages | filter: {code: $ctrl.languageModel})[0].icon}}"></span>
+            {{'LANGUAGES.'+(($ctrl.languages | filter: {code: $ctrl.languageModel})[0].name) | uppercase | translate}}
+          </div>
+          <ul class="dropdown-menu">
+            <li ng-repeat="item in $ctrl.languages" ng-click="$ctrl.languageModel = item.code">
+              <span class="flag-icon {{item.icon}}"></span>
+              {{'LANGUAGES.'+item.name | uppercase | translate}}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">
+        <button class="button button-primary"
+                ng-click="$ctrl.save()">
+          {{'BUTTON.SAVE' | translate}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

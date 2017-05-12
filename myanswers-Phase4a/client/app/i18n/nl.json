@@ -1,0 +1,235 @@
+{
+  "BUTTON":{
+    "ADD": "Toevoegen",
+    "CHOOSE": "Kiezen",
+    "REGISTRATION": "Registratie",
+    "RESET_PASSWORD": "Wachtwoord opnieuw instellen",
+    "SIGNIN": "Aanmelden",
+    "FORGOT": "Wachtwoord vergeten?",
+    "CREATE": "Creëren",
+    "UPDATE": "Bijwerken",
+    "EDIT": "Bewerken",
+    "DELETE": "Verwijderen",
+    "CANCEL": "Annuleren",
+    "SAVE": "Opslaan",
+    "SEND": "Versturen",
+    "UPLOAD_ATTACHMENT": "Bijlage uploaden (max 20MB)",
+    "YES": "Yes"
+  },
+
+  "CATEGORY":{
+    "CREATE_CATEGORY": "Categorie Creëren",
+    "CREATE_SUBCATEGORY": "Subcategorie Creëren",
+    "UPDATE_CATEGORY": "Subcategorie Bijwerken",
+    "UPDATE_SUBCATEGORY": "Subcategorie Bijwerken",
+    "EDIT_CATEGORY": "Categorie Bewerken",
+    "EDIT_SUBCATEGORY": "Subcategorie Bewerken",
+    "REMOVE_CATEGORY": "Categorie Verwijderen",
+    "REMOVE_SUBCATEGORY": "Subcategorie Verwijderen",
+    "CONFIRM_CATEGORY": "Do you want to delete this Category?",
+    "CONFIRM_SUBCATEGORY": "Do you want to delete this Subcategory?",
+    "SORT_BY": "Sorteren op:",
+    "VISIBILITY_USER": "Zichtbaar voor deze gebruikers",
+    "SORT_FILTER":{
+      "CUSTOM": "Handmatig",
+      "NAME_ASC": "Naam[A-Z]",
+      "NAME_DESC": "Naam[Z-a]",
+      "AUTHOR_ASC": "Auteur[A-Z]",
+      "AUTHOR_DESC": "Auteur[Z-a]",
+      "LAST_CREATED": "Laatst Gecreëerd",
+      "LAST_UPDATED": "Laatst Bewerkt"
+    },
+    "LANGUAGE": "Taal",
+    "AUTHOR": "Auteur",
+    "PARENT_CATEGORY": "Hoofdcategorie",
+    "LABEL_TITLE": "Categorienaam"
+  },
+
+  "FAQ":{
+    "TITLE": "FAQ",
+    "CREATE": "FAQ Creëren",
+    "EDIT": "FAQ Bewerken",
+    "REMOVE": "FAQ Verwijderen",
+    "WORD": "woord",
+    "WORDS": "woorden",
+    "CHARACTER": "karakter",
+    "CHARACTERS":  "karakters",
+    "READING_TIME": "leestijd",
+    "INTERNAL_COMMENT": "Interne opmerking(en)",
+    "INTERNAL_COMMENT_PLACEHOLDER": "Voer hier uw opmerkingen in",
+    "CATEGORIES": "Categorieën:",
+    "AUTHOR": "Auteur:",
+    "VISIBILITY": "Zichtbaarheid:",
+    "LANGUAGE": "Taal:",
+    "ATTACHMENTS": "Bijlagen:",
+    "LABEL_TITLE": "Titel",
+    "CONTENT": "Inhoud",
+    "KEYWORDS": "Trefwoorden",
+    "KEYWORDS_PLACEHOLDER": "Voer trefwoorden in gescheiden door comma's",
+    "PUBLISH": "Publiceer in categorie:",
+    "CONFIRM": "Do you want to delete this FAQ?",
+    "VISIBILITY_USER": "Zichtbaar voor deze gebruikers:",
+
+    "STATUSES":{
+      "DRAFT": "Concept",
+      "PUBLISHED": "Gepubliceerd",
+      "TRASH": "Weggegooid",
+      "ALL": "Alles"
+    },
+    "STATUSES_PAGE": {
+      "DRAFT": "Alle concept FAQ's",
+      "PUBLISHED": "Alle gepubliceerde FAQ's",
+      "TRASH": "Alle weggegooide FAQ's",
+      "ALL": "Alle FAQ's"
+    }
+  },
+
+  "DASHBOARD":{
+    "TITLE": "Dashboard",
+    "HOME": "Home"
+  },
+
+  "USERS":{
+    "TITLE": "Gebruikers",
+    "USER_NAME": "Gebruikersnaam",
+    "EMAIL": "E-mail",
+    "ROLE": "Rol",
+    "EDIT": "Gebruiker Bewerken",
+    "DISABLE": "Gebruiker Deactiveren",
+    "DISABLED": "Deze gebruiker is gedeactiveerd",
+    "ENABLE": "Gebruiker Activeren",
+    "REMOVE": "Gebruiker Verwijderen",
+    "UPDATE": "Gebruiker Bijwerken",
+    "CREATE": "Gebruiker Creëren "
+  },
+
+  "SUBDOMAIN": {
+    "TITLE": "Kies subdomein",
+    "SUBDOMAIN": "Subdomein",
+    "NAME": "Naam Subdomein"
+  },
+
+  "REGISTRATION": {
+    "TITLE": "Registratie",
+    "RESET_PASSWORD": "Wachtwoord opnieuw instellen",
+    "PASSWORD": "Wachtwoord",
+    "REPEAT_PASSWORD": "Wachtwoord Herhalen",
+    "FORGOT_PASSWORD": "Wachtwoord Vergeten",
+    "LOGIN": "Inloggen",
+    "REMEMBER": "Onthoud mij",
+    "EMAIL": "E-mail",
+    "FIRST_NAME": "Voornaam",
+    "LAST_NAME": "Achternaam",
+    "SUBDOMAIN": "Subdomein"
+  },
+
+  "NAV":{
+    "VIEW": "Bekijk de kennisbank",
+    "CHOOSE_SUBDOMAIN": "Kies subdomein",
+    "LOG_OUT": "Uitloggen"
+  },
+
+  "LANGUAGES": {
+    "TITLE": "Taal",
+    "CHOOSE_LANGUAGE": "Taal kiezen",
+    "ENGLISH": "Engels",
+    "DUTCH": "Nederlands",
+    "FRENCH": "Frans",
+    "GERMAN": "Duits"
+  },
+  "SETTINGS":{
+    "TITLE":"Profielinstellingen",
+    "KNOWLEDGE_BASE":"Kennis Basisinstellingen",
+    "ADMINISTRATIVE":"Administratieve Instellingen",
+    "PERSONAL_INFO":"Persoonlijke informatie",
+    "CHANGE_PERSONAL_INFO":"Verander uw persoonlijke gegevens",
+    "PASSWORD": "Wachtwoord",
+    "CHANGE_PASSWORD": "Verander uw wachtwoord",
+    "CHANGE_LANGUAGE":"Verander de taal van de gebruikersinterface",
+    "APPEARANCE":"Uiterlijk",
+    "CUSTOMISE_APPEARANCE":"Pas de look en feel aan",
+    "ACCESSIBILITY":"Toegankelijkheid",
+    "CONTROL_ACCESSIBILITY":"Controleer de toegankelijkheid",
+    "IMPORT_DATA":"Data importeren",
+    "IMPORT_DATA_FROM":"Importeer uw gegevens uit andere bronnen",
+    "APPEARANCE_LOGO":"Upload hier uw bedrijfs logo",
+    "APPEARANCE_FAVICON":"Upload hier uw favicon",
+    "APPEARANCE_KNOWLEDGE_BASE_NAME":"Geef je kennisbasis een naam",
+    "APPEARANCE_HEADER_COLOR":"Geef de kop een mooie kleur",
+    "APPEARANCE_HEADER_IMAGE":"Of upload een afbeelding voor de koptekst",
+    "APPEARANCE_LINK_COLOR":"Welke kleur moet je hyperlinks hebben?",
+    "APPEARANCE_FONT":"Geef het lichaam een mooi lettertype om te lezen",
+    "APPEARANCE_FONT_TITLE":"En hoe zou de titel eruit zien?",
+    "APPEARANCE_LOGO_URL":"Naar welke URL moet het logo verwijzen?",
+    "APPEARANCE_CONTACT_US_URL":"Naar welke URL moet de link 'Contact ons' wijzen?",
+    "APPEARANCE_SEARCH_BAR_TEXT":"Tot slot, wat moet in de zoekbalk geschreven worden?"
+  },
+
+  "SEARCH": "Zoeken",
+  "RESULT": "resultaat",
+  "RESULTS": "resultaten",
+
+  "MESSAGES": {
+    "VALIDATION_ERROR": "Validatiefout:",
+    "ACCOUNT_ACTIVATED": "Account is geactiveerd!",
+    "PASSWORD_CHANGED": "Wachtwoord met succes gewijzigd",
+    "PASSWORD_INVALID": "Wachtwoord moet minstens 1 hoofdletter, 1 kleine letter en 1 cijfer bevatten",
+    "EMAIL_INVALID": "Ongeldig e-mailadres",
+    "REGISTRATION_DONE": "Dank voor uw aanmelding. <br>Activeer uw account. <br>Link gestuurd naar",
+    "REGISTRATION_DONE_MSG": "Registratie voltooid",
+    "USER_REMOVED": "Gebruiker met succes verwijderd.",
+    "USER_STATUS_CHANGED": "Gebruikersstatus met succes gewijzigd.",
+    "ERROR_IMAGE_TYPE": "Bestand moet een afbeelding zijn (*.jpeg, *.jpg, *.png)",
+    "ERROR_DOCUMENT_TYPE": "Bestand moet een document zijn (*.doc, *.docx, *.pdf)",
+    "FAQ_UPDATE": "FAQ met succes bijgewerkt.",
+    "FAQ_CREATE": "FAQ met succes aangemaakt.",
+    "FAQ_REMOVE":"FAQ met succes verwijderen.",
+    "CATEGORY_CREATE": "Categorie met succes aangemaakt.",
+    "SUBCATEGORY_CREATE": "Subcategorie met succes aangemaakt.",
+    "CATEGORY_UPDATE": "Categorie met succes bijgewerkt.",
+    "SUBCATEGORY_UPDATE": "Subcategorie met succes bijgewerkt.",
+    "USER_UPDATE": "Gebruiker met succes bijgewerkt.",
+    "USER_CREATE": "Gebruiker met succes aangemaakt.",
+    "EMAIL_SENT": "E-mail verstuurd",
+    "AUTHORIZATION_ERROR": "Autorisatiefout:",
+    "LOGIN_AGAIN": "Graag opnieuw inloggen",
+    "NOT_ACCESS": "U heeft geen toegang tot deze functies",
+    "LANGUAGE_CHANGED": "Language changed",
+    "NOT_FOUND": "Resource not found",
+    "ANSWER_COPIED":"Antwoord gekopieerd naar klembord."
+  },
+
+  "VALIDATION_ERRORS": {
+    "INVALID_TYPE": "Invalid type, expected {{schema.type}}",
+    "ENUM_MISMATCH": "No enum match for: {{viewValue}}",
+    "ANY_OF_MISSING": "Data does not match any schemas from \"anyOf\"",
+    "ONE_OF_MISSING": "Data does not match any schemas from \"oneOf\"",
+    "ONE_OF_MULTIPLE": "Data is valid against more than one schema from \"oneOf\"",
+    "NOT_PASSED": "Data matches schema from \"not\"",
+    "NUMBER_MULTIPLE_OF": "Value is not a multiple of {{schema.multipleOf}}",
+    "NUMBER_MINIMUM": "{{viewValue}} is less than the allowed minimum of {{schema.minimum}}",
+    "NUMBER_MINIMUM_EXCLUSIVE": "{{viewValue}} is equal to the exclusive minimum {{schema.minimum}}",
+    "NUMBER_MAXIMUM": "{{viewValue}} is greater than the allowed maximum of {{schema.maximum}}",
+    "NUMBER_MAXIMUM_EXCLUSIVE": "{{viewValue}} is equal to the exclusive maximum {{schema.maximum}}",
+    "NUMBER_NOT_A_NUMBER": "Value is not a valid number",
+    "STRING_LENGTH_SHORT": "String is too short ({{viewValue.length}} chars), minimum {{schema.minLength}}",
+    "STRING_LENGTH_LONG": "String is too long ({{viewValue.length}} chars), maximum {{schema.maxLength}}",
+    "STRING_PATTERN": "String does not match pattern: {{schema.pattern}}",
+    "OBJECT_PROPERTIES_MINIMUM": "Too few properties defined, minimum {{schema.minProperties}}",
+    "OBJECT_PROPERTIES_MAXIMUM": "Too many properties defined, maximum {{schema.maxProperties}}",
+    "OBJECT_REQUIRED": "Required",
+    "OBJECT_ADDITIONAL_PROPERTIES": "Additional properties not allowed",
+    "OBJECT_DEPENDENCY_KEY": "Dependency failed - key must exist",
+    "ARRAY_LENGTH_SHORT": "Array is too short ({{value.length}}), minimum {{schema.minItems}}",
+    "ARRAY_LENGTH_LONG": "Array is too long ({{value.length}}), maximum {{schema.maxItems}}",
+    "ARRAY_UNIQUE": "Array items are not unique",
+    "ARRAY_ADDITIONAL_ITEMS": "Additional items not allowed",
+    "FORMAT_CUSTOM": "ormat validation failed",
+    "KEYWORD_CUSTOM": "Keyword failed: \"{{title}}\"",
+    "CIRCULAR_REFERENCE": "Circular $refs",
+    "UNKNOWN_PROPERTY": "Unknown property (not in schema)"
+  },
+
+  "SUCCESS": "Success",
+  "ERROR": "Error"
+}

@@ -1,0 +1,172 @@
+@import "variabels";
+
+.modal-title {
+  text-transform: capitalize;
+}
+
+.tooltip-inner {
+  white-space: pre;
+  max-width: none;
+}
+
+.content-wrapper {
+  width: calc(100% - #{$navbar-width});
+  right: 0;
+  position: absolute;
+  height: 100%;
+  padding: $contentPadding;
+}
+
+.ma-select {
+  position: relative;
+
+  .dropdown-toggle{
+    height: 43px;
+    padding: 11px 12px;
+
+    .dropdown-angle{
+      float: right;
+      margin: 2px 0 0 0;
+      transform: none;
+    }
+    span, i{
+      transform: scale(1.5);
+      margin-right: 5px;
+    }
+  }
+
+  ul{
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    max-height: 300px;
+    overflow: auto;
+
+    li{
+      padding: 5px 12px;
+      span, i{
+        margin-right: 5px;
+      }
+
+      &:hover{
+        background-color: rgba(#000, 0.1);
+      }
+    }
+  }
+}
+
+.coming-soon{
+  border-radius: 10px;
+  background: #ffaa00;
+  color: black;
+  margin: 0 10px;
+  padding: 2px 10px;
+  font-weight: normal;
+  font-size: 1.2rem;
+  &:after{
+    content: 'Coming soon';
+  }
+}
+
+//buttons
+.button {
+  text-align: center;
+  padding: 3px 20px;
+  color: $buttonBg;
+  background: none;
+  border: 1px solid $buttonBg;
+  border-radius: $buttonBorderRadius;
+  font-size: $buttonFontSize;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  text-transform: capitalize;
+  width: initial;
+  white-space: nowrap;
+
+  i {
+    margin-right: 7px;
+    font-weight: bold;
+    transform: scale(1.1);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &[disabled] {
+    border: 1px solid rgba(#fff, 0.5);
+
+    &:after,
+    &:hover:after {
+      background-color: rgba(#fff, 0.5);
+    }
+  }
+
+  &:hover:after {
+    background-color: rgba(#000, 0.05);
+  }
+
+  &:active:after {
+    background-color: rgba(#000, 0.15);
+  }
+
+  &-primary {
+    color: $buttonColor;
+    background-color: $buttonBg;
+  }
+}
+
+.icon-button {
+  width: $iconButtonsSize;
+  height: $iconButtonsSize;
+  font-size: $buttonFontSize;
+  background: none;
+  border-radius: 50%;
+  border: none;
+  color: $iconButtonsColor;
+  position: relative;
+  outline: none;
+
+  i {
+    margin: 0;
+    transform: scale(1.4);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  &[disabled] {
+    color: mix($iconButtonsColor, #fff);
+    &:after,
+    &:hover:after {
+      background: none;
+    }
+  }
+
+  &:hover:after {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:active:after {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+}
+
+.button-full {
+  width: 100%;
+}
+
+//end button

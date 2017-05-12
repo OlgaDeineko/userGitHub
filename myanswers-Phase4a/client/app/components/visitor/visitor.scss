@@ -1,0 +1,103 @@
+@import "../../styles/variabels";
+
+.visitor {
+  height: 100%;
+
+  .visitor {
+    &-bg-heading {
+      padding: 20px 0 50px;
+      background-color: #efefef;
+    }
+
+    &-title {
+      margin: 20px 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    &-actions {
+      .icon-button {
+        vertical-align: middle;
+      }
+    }
+
+    &-tree {
+      padding: 20px 10px;
+
+
+      a,
+      a:hover {
+        color: $darkTextColor;
+      }
+      &-prev {
+        padding: 10px;
+        margin: 0;
+        background-color: $primaryColor;
+        color: #fff;
+        display: block;
+        font-size: 22px;
+      }
+
+      &-item {
+        padding: 15px;
+        cursor: pointer;
+        font-size: 22px;
+        a {
+          display: block;
+        }
+
+        &:hover {
+          background-color: rgba($primaryColor, 0.6);
+          color: white;
+        }
+        &.item-column{
+          float: left;
+          width: 50%;
+        }
+      }
+
+
+    }
+
+    &-last-created {
+      h2 {
+        padding: 10px;
+        margin: 0;
+        color: $primaryColor;
+        font-size: 2rem;
+      }
+      padding: 20px 10px;
+
+      &-item {
+        padding: 5px;
+        cursor: pointer;
+        font-size: 1.8rem;
+        a {
+          display: block;
+        }
+
+        &:hover {
+          background-color: rgba(#000, 0.1);
+        }
+      }
+    }
+  }
+}
+
+.algolia-search-input {
+  margin: 0;
+  .form-control {
+    font-size: 20px;
+    height: auto;
+    padding: 15px;
+    border-radius: 50px;
+    padding-left: 60px;
+  }
+  i {
+    position: absolute;
+    top: 14px;
+    left: 31px;
+    font-size: 30px;
+    opacity: 0.4;
+  }
+}

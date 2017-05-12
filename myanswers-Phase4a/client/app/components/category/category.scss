@@ -1,0 +1,30 @@
+@import "../../styles/variabels";
+
+.category{
+  &-content{
+    min-height: 100%;
+
+    &:after {
+      content: " ";
+      border-left: 1px solid $dividerDarkColor;
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  &-title{
+    h1{
+      font-weight: bold;
+      font-size: $fontLg;
+      margin: 0;
+    }
+
+  }
+
+  &-actions{
+    position: relative;
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="settings-title-active">{{'SETTINGS.ACCESSIBILITY' | translate}}</h3>
+      <p class="setting-description">{{'SETTINGS.CONTROL_ACCESSIBILITY' | translate}}</p>
+      <p>Is this a private site?</p>
+      <span>A private site requires a user login, while a public site can be accessed by anyone</span>
+      <lable>Visit your knowledge base</lable>
+      <form class="form-inline">
+        <div class="form-group">
+          <lable>Choose your subdomain</lable>
+          <div class="input-group">
+            <input type="text" class="form-control" id="yoursubdomain" placeholder="yoursubdomain">
+            <div class="input-group-addon">.myanswers.io</div>
+          </div>
+        </div>
+      </form>
+      <div class="form-group">
+        <lable>If you wish, you can use add the knowledge base to your domain. Type here the custom domain</lable>
+        <input class="form-control" type="text" placeholder="For example help.yourcompany.com">
+        <a ui-sref="">Follow these instructions to point a custom domain to MyAnswer.</a>
+      </div>
+      <button class="button button-primary"
+              ng-click="$ctrl.save()">
+        {{'BUTTON.SAVE' | translate}}
+      </button>
+    </div>
+  </div>
+</div>
